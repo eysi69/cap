@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Green GSM — Smarter Rides. Cleaner Cities. An all-electric mobility service for Metro Manila.">
+    <meta name="theme-color" content="#0f7c5c">
+    <title>Green GSM — Smarter Rides. Cleaner Cities.</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- App styles -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230f7c5c'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>G</text></svg>">
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+<body>
+    <a class="visually-hidden-focusable" href="#main-content">Skip to content</a>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg fixed-top gg-navbar" id="mainNav" aria-label="Primary navigation">
+        <div class="container-fluid gg-nav-container">
+            <a class="navbar-brand gg-brand" href="/" data-route="/" aria-label="Green GSM home">
+                <span class="gg-logo" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="40" height="40" role="img" aria-hidden="true">
+                        <circle cx="24" cy="24" r="22" fill="url(#ggGrad)"/>
+                        <path d="M30 20h-6a4 4 0 0 0 0 8h3v-3h-3" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="24" cy="24" r="22" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
+                        <defs>
+                            <linearGradient id="ggGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#16b07c"/>
+                                <stop offset="1" stop-color="#0b6b4f"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="gg-wordmark">Green<span class="gg-wordmark-accent">GSM</span></span>
+            </a>
+
+            <button class="navbar-toggler gg-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse gg-desktop-nav">
+                <ul class="navbar-nav gg-nav-center mx-auto">
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/" data-route="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/services" data-route="/services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/fleet" data-route="/fleet">Fleet</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/sustainability" data-route="/sustainability">Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/service-areas" data-route="/service-areas">Service Areas</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/safety" data-route="/safety">Safety</a></li>
+                    <li class="nav-item"><a class="nav-link gg-nav-link" href="/about" data-route="/about">About</a></li>
+                </ul>
+                <div class="gg-nav-right">
+                    <a class="gg-nav-link gg-help-link" href="/help" data-route="/help"><i class="bi bi-question-circle me-1"></i>Help Center</a>
+                    <a class="btn gg-btn-primary" href="#download-app" data-route="/download"><i class="bi bi-download me-1"></i>Download App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE OFFCANVAS ===== -->
+    <div class="offcanvas offcanvas-end gg-offcanvas" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <span class="offcanvas-title gg-brand" id="mobileNavLabel">
+                <span class="gg-logo" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" width="36" height="36"><circle cx="24" cy="24" r="22" fill="#0b6b4f"/><path d="M30 20h-6a4 4 0 0 0 0 8h3v-3h-3" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="gg-wordmark">Green<span class="gg-wordmark-accent">GSM</span></span>
+            </span>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column gg-mobile-nav">
+                <li class="nav-item"><a class="nav-link" href="/" data-route="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/services" data-route="/services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/fleet" data-route="/fleet">Fleet</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sustainability" data-route="/sustainability">Sustainability</a></li>
+                <li class="nav-item"><a class="nav-link" href="/service-areas" data-route="/service-areas">Service Areas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/safety" data-route="/safety">Safety</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about" data-route="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/help" data-route="/help">Help Center</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact" data-route="/contact">Contact</a></li>
+            </ul>
+            <a class="btn gg-btn-primary w-100 mt-4" href="#download-app" data-route="/download"><i class="bi bi-download me-1"></i>Download App</a>
+        </div>
+    </div>
+
+    <!-- ===== MAIN ===== -->
+    <main id="main-content" class="gg-main">
+        <div id="app" class="gg-app" aria-live="polite"></div>
+    </main>
+
+    <!-- ===== DOWNLOAD APP CTA (shared) ===== -->
+    <section id="download-app" class="gg-download-cta" aria-label="Get the Green GSM app">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="gg-eyebrow gg-eyebrow-light">Coming Soon</span>
+                    <h2 class="gg-download-title">Your next ride is closer than ever.</h2>
+                    <p class="gg-download-sub">Access Green GSM services through the future Green GSM mobile experience — designed for effortless electric mobility across Metro Manila.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#" class="gg-store-btn" aria-label="Download on the App Store" onclick="event.preventDefault()">
+                            <i class="bi bi-apple"></i>
+                            <span><small>Download on the</small><strong>App Store</strong></span>
+                        </a>
+                        <a href="#" class="gg-store-btn" aria-label="Get it on Google Play" onclick="event.preventDefault()">
+                            <i class="bi bi-google-play"></i>
+                            <span><small>Get it on</small><strong>Google Play</strong></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center d-none d-lg-block">
+                    <div class="gg-phone-mockup" aria-hidden="true">
+                        <div class="gg-phone-screen">
+                            <div class="gg-phone-bar"></div>
+                            <div class="gg-phone-content">
+                                <i class="bi bi-ev-station-fill gg-phone-icon"></i>
+                                <div class="gg-phone-title">Green GSM</div>
+                                <div class="gg-phone-tag">Smarter Rides. Cleaner Cities.</div>
+                                <div class="gg-phone-pill"><i class="bi bi-geo-alt-fill"></i> Metro Manila</div>
+                                <div class="gg-phone-pill gg-phone-pill-alt"><i class="bi bi-battery-charging"></i> 100% Electric</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="gg-footer" aria-label="Footer">
+        <div class="container">
+            <div class="row g-4 py-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gg-brand gg-footer-brand">
+                        <span class="gg-logo" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="url(#ggGradF)"/><path d="M30 20h-6a4 4 0 0 0 0 8h3v-3h-3" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ggGradF" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#16b07c"/><stop offset="1" stop-color="#0b6b4f"/></linearGradient></defs></svg>
+                        </span>
+                        <span class="gg-wordmark">Green<span class="gg-wordmark-accent">GSM</span></span>
+                    </div>
+                    <p class="gg-footer-tag">Smarter Rides. Cleaner Cities.</p>
+                    <p class="gg-footer-desc">An all-electric mobility service building a cleaner, more sustainable Metro Manila.</p>
+                    <div class="gg-social">
+                        <a href="#" aria-label="Facebook" onclick="event.preventDefault()"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="X" onclick="event.preventDefault()"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Instagram" onclick="event.preventDefault()"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" onclick="event.preventDefault()"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h3 class="gg-footer-h">Company</h3>
+                    <ul class="gg-footer-links">
+                        <li><a href="/about" data-route="/about">About</a></li>
+                        <li><a href="/sustainability" data-route="/sustainability">Sustainability</a></li>
+                        <li><a href="/safety" data-route="/safety">Safety</a></li>
+                        <li><a href="#" onclick="event.preventDefault()">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-6">
+                    <h3 class="gg-footer-h">Services</h3>
+                    <ul class="gg-footer-links">
+                        <li><a href="/services" data-route="/services">Passenger Mobility</a></li>
+                        <li><a href="/services" data-route="/services">Corporate Mobility</a></li>
+                        <li><a href="/services" data-route="/services">Fleet Operations</a></li>
+                        <li><a href="/services" data-route="/services">Electric Mobility</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="gg-footer-h">Support</h3>
+                    <ul class="gg-footer-links">
+                        <li><a href="/help" data-route="/help">Help Center</a></li>
+                        <li><a href="/contact" data-route="/contact">Contact</a></li>
+                        <li><a href="/help" data-route="/help">FAQs</a></li>
+                        <li><a href="/contact" data-route="/contact">Report an Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gg-footer-bottom">
+                <p>&copy; 2026 Green GSM. All rights reserved.</p>
+                <div class="gg-footer-legal">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" onclick="event.preventDefault()">Privacy Policy</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" onclick="event.preventDefault()">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLEET MODAL ===== -->
+    <div class="modal fade gg-modal" id="fleetModal" tabindex="-1" aria-labelledby="fleetModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" id="fleetModalContent"><!-- filled by fleet.js --></div>
+        </div>
+    </div>
+
+    <!-- ===== SUPPORT SUCCESS MODAL ===== -->
+    <div class="modal fade gg-modal" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body gg-modal-body text-center p-4">
+                    <div class="gg-success-icon"><i class="bi bi-check-lg"></i></div>
+                    <h3 class="gg-modal-title">Message received</h3>
+                    <p class="gg-modal-text">Thank you for reaching out. This is a demo contact form — no message was actually sent. When the Green GSM support system is connected, your message will be delivered to our customer support team.</p>
+                    <button type="button" class="btn gg-btn-primary" data-bs-dismiss="modal">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== LEGAL MODAL ===== -->
+    <div class="modal fade gg-modal" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header gg-modal-header">
+                    <h3 class="modal-title gg-modal-title" id="legalModalLabel">Privacy Policy &amp; Terms of Service</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body gg-modal-body">
+                    <p>This is a demo website for Green GSM. The Privacy Policy and Terms of Service shown here are placeholder content for demonstration purposes only and do not constitute legal terms.</p>
+                    <p>In the live Green GSM platform, this content would be replaced with the official privacy policy and terms of service governing use of Green GSM services.</p>
+                    <p>For questions about this demo, please use the Contact page.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/support.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/fleet.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
